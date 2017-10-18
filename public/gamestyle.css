@@ -1,0 +1,106 @@
+html, body, table, td { margin: 0; padding: 0; }
+.gameboard > .scoreboard {
+	width: 800px; 
+	margin: 0 auto;
+}
+.gameboard > .scoreboard > .playerboard {
+	display: inline-block; width: 45%;
+	border: 2px solid transparent;
+	margin-right: 4%;
+}
+.gameboard > .scoreboard > .playerboard.player1 {
+	color: red;
+}
+.gameboard > .scoreboard > .playerboard.player2 {
+	color: blue;
+}
+.gameboard > .scoreboard > .playerboard.player3 {
+	color: green;
+}
+.gameboard > .scoreboard > .playerboard.player4 {
+	color: orange;
+}
+.gameboard > .scoreboard > .playerboard.player1.current { border-color: red; }
+.gameboard > .scoreboard > .playerboard.player2.current { border-color: blue; }
+.gameboard > .scoreboard > .playerboard.player3.current { border-color: green; }
+.gameboard > .scoreboard > .playerboard.player4.current { border-color: orange; }
+.gameboard > .scoreboard > .playerboard > .player { 
+	font-weight: bold; size: 150%;
+}
+.gameboard > table {
+	border-collapse: separate;
+	border-spacing: 5px;
+	margin: 0 auto;
+}
+.gameboard > table td.square {
+	border: 3px solid #333;
+	width: 50px;
+	height: 50px;
+
+	/* don't allow 'selecting' items because the selection highlight would look funny in the game */
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	vertical-align: top;
+
+	position: relative;
+	padding: 0; 
+}
+.gameboard .tick {
+	display: inline-block; 
+	height: 7px; width: 7px; 
+	background-color: #333;
+	margin-top: 22px; margin-left: 22px;
+	position: absolute;
+}
+
+
+.gameboard > table td.square[data-player='1'] { border-color: red; }
+.gameboard > table td.square[data-player='2'] { border-color: blue; }
+.gameboard > table td.square[data-player='3'] { border-color: green; }
+.gameboard > table td.square[data-player='4'] { border-color: orange; }
+
+.gameboard > table td.square[data-player='1'] .tick { background-color: red; }
+.gameboard > table td.square[data-player='2'] .tick { background-color: blue; }
+.gameboard > table td.square[data-player='3'] .tick { background-color: green; }
+.gameboard > table td.square[data-player='4'] .tick { background-color: orange; }
+
+.gameboard > table td.square[data-count=0] { background-color: green; }
+
+/* the configuration of the ticks on the board depending on how many there are, like pips on dice */
+.gameboard > table td.square[data-count='1'] .tick:nth-child(1) {  }
+
+.gameboard > table td.square[data-count='2'] .tick:nth-child(1) { top: -8px; left: -8px; }
+.gameboard > table td.square[data-count='2'] .tick:nth-child(2) { top:  8px; left:  8px; }
+
+.gameboard > table td.square[data-count='3'] .tick:nth-child(1) { top: -8px; left:     0 }
+.gameboard > table td.square[data-count='3'] .tick:nth-child(2) { top:  8px; left: -8px;  }
+.gameboard > table td.square[data-count='3'] .tick:nth-child(3) { top:  8px; left:  8px;  }
+
+.gameboard > table td.square[data-count='4'] .tick:nth-child(1) { top: -8px; left: -8px; }
+.gameboard > table td.square[data-count='4'] .tick:nth-child(2) { top: -8px; left:  8px; }
+.gameboard > table td.square[data-count='4'] .tick:nth-child(3) { top:  8px; left: -8px; }
+.gameboard > table td.square[data-count='4'] .tick:nth-child(4) { top:  8px; left:  8px; }
+
+.gameboard > table td.square[data-count='5'] .tick:nth-child(1) { top: -8px; left: -8px; }
+.gameboard > table td.square[data-count='5'] .tick:nth-child(2) { top: -8px; left:  8px; }
+.gameboard > table td.square[data-count='5'] .tick:nth-child(3) { top:  8px; left: -8px; }
+.gameboard > table td.square[data-count='5'] .tick:nth-child(4) { top:  8px; left:  8px; }
+.gameboard > table td.square[data-count='5'] .tick:nth-child(5) {  }
+
+.gameboard > table td.square[data-count='6'] .tick:nth-child(1) { top: -8px; left: -8px; }
+.gameboard > table td.square[data-count='6'] .tick:nth-child(2) { top: -8px; left:    0; }
+.gameboard > table td.square[data-count='6'] .tick:nth-child(3) { top: -8px; left:  8px; }
+.gameboard > table td.square[data-count='6'] .tick:nth-child(4) { top:  8px; left: -8px; }
+.gameboard > table td.square[data-count='6'] .tick:nth-child(5) { top:  8px; left:    0; }
+.gameboard > table td.square[data-count='6'] .tick:nth-child(6) { top:  8px; left:  8px; }
+
+.gameboard > table td.square[data-count='7'] .tick:nth-child(1) { top: -8px; left: -8px; }
+.gameboard > table td.square[data-count='7'] .tick:nth-child(2) { top: -8px; left:    0; }
+.gameboard > table td.square[data-count='7'] .tick:nth-child(3) { top: -8px; left:  8px; }
+.gameboard > table td.square[data-count='7'] .tick:nth-child(4) { top:    0; left:    0; }
+.gameboard > table td.square[data-count='7'] .tick:nth-child(5) { top:  8px; left: -8px; }
+.gameboard > table td.square[data-count='7'] .tick:nth-child(6) { top:  8px; left:    0; }
+.gameboard > table td.square[data-count='7'] .tick:nth-child(7) { top:  8px; left:  8px; }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tickaboom</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/Player.js"></script>
+<script src="scripts/Boom.js"></script>
+<script src="scripts/Square.js"></script>
+<script src="scripts/Game.js"></script>
+<script src="scripts/Score.js"></script>
+<script src="scripts/Sounds.js"></script>
+<link rel="stylesheet" href="./gamestyle.css">
+</head>
+<body>
+
+<div class="gameboard"></div>
+
+<script>
+
+/**
+ * shuffle the elements of an array in place returning the original array
+ */
+Array.prototype.shuffle = function() {
+	var currentIndex = this.length, temporaryValue, randomIndex ;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = this[currentIndex];
+		this[currentIndex] = this[randomIndex];
+		this[randomIndex] = temporaryValue;
+	}
+
+	return this;
+}
+
+
+var game;
+$(() => {
+	game = new Game(6, 2);
+});
+</script>
+</body>
+</html>
