@@ -1,0 +1,9 @@
+<div>
+    <table>
+        <tbody>
+            <tr *ngFor="let row of game.squares">
+                <square *ngFor="let square of row" [square]="square"></square>
+            </tr>
+        </tbody>
+    </table>
+</div>
