@@ -1,0 +1,7 @@
+<div class="scoreboard">
+  <div *ngFor="let player of game.players" class="player player-{{player.num}}" [class.currentPlayer]="player === game.currentPlayer">
+    <div>Player {{player.num}}</div>
+    <div>Squares: {{player.getScore().squares}}</div>
+    <div>Ticks: {{player.getScore().ticks}}</div>
+  </div>
+</div>

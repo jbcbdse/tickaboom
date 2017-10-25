@@ -1,0 +1,18 @@
+div.player {
+  display: inline-block;
+  width: 45%;
+  margin-right: 4%;
+  border: 2px solid black;
+  padding: 5px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+div.player-1 { color: red; }
+div.player-2 { color: blue; }
+div.player-3 { color: green; }
+div.player-4 { color: orange; }
+
+div.player-1.currentPlayer { border-color: red; }
+div.player-2.currentPlayer { border-color: blue; }
+div.player-3.currentPlayer { border-color: green; }
+div.player-4.currentPlayer { border-color: orange; }
